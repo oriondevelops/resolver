@@ -4,6 +4,7 @@ import {useRef} from 'react';
 import {useEffect} from 'react';
 import ResolveModal from './components/ResolveModal.jsx'
 import Logo from './components/Logo.jsx'
+import Confetti from 'react-confetti';
 
 export default function Home() {
     const [options, setOptions] = useState([
@@ -27,6 +28,7 @@ export default function Home() {
     const [resolveModalOpen, setResolveModalOpen] = useState(false);
     const [selectedOption, setSelectedOption] = useState(null);
     const [currentTime, setCurrentTime] = useState(new Date());
+    const [showConfetti, setShowConfetti] = useState(false);
     const formRef = useRef();
 
     // set in state when the user last resolved an option
@@ -143,6 +145,7 @@ export default function Home() {
         // Alert the name of the selected option
         setSelectedOption(selectedOption.name);
         setResolveModalOpen(true)
+        setShowConfetti(true);
         // set the last resolved time to now
         setLastResolved(new Date());
     }
@@ -296,6 +299,15 @@ export default function Home() {
                         </ul>
                     </div>
                 </>
+            )}
+            {showConfetti && (
+                <Confetti
+                    width={window.innerWidth}
+                    height={window.innerHeight}
+                    recycle={false}
+                    numberOfPieces={200}
+                    gravity={0.2}
+                />
             )}
             {resolveModalOpen &&
                 <ResolveModal isOpen={resolveModalOpen}
