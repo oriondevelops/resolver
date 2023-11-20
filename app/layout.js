@@ -1,5 +1,5 @@
 import './globals.css'
-import { Analytics } from '@vercel/analytics/react';
+import Fathom from './components/Fathom.jsx';
 
 export const metadata = {
   title: 'Resolver!',
@@ -10,8 +10,8 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body className="antialiased">
+      <Fathom />
       {children}
-      <Analytics />
       </body>
     </html>
   )

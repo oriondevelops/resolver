@@ -5,6 +5,9 @@ import {useEffect} from 'react';
 import ResolveModal from './components/ResolveModal.jsx'
 import Logo from './components/Logo.jsx'
 import Confetti from 'react-confetti';
+import Image from "next/image";
+import LogoImage from "@/app/images/logo.jpeg";
+import FathomBanner from "@/app/images/fathom-aff.png"
 
 export default function Home() {
     const [options, setOptions] = useState([
@@ -297,6 +300,17 @@ export default function Home() {
                                 </li>
                             ))}
                         </ul>
+                    </div>
+                    <div className="mt-28 opacity-75 shadow">
+                        <a href="https://app.usefathom.com/share/bgrpbyco/resolver">
+                            <h3 className="font-semibold">Public Analytics of Resolver</h3>
+                        </a>
+                        <a href="https://usefathom.com/ref/QBCNIT">
+                            <Image
+                                src={FathomBanner}
+                                alt="Fathom Analytics"
+                            />
+                        </a>
                     </div>
                 </>
             )}
