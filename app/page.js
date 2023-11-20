@@ -190,7 +190,7 @@ export default function Home() {
         const favourableOptions = options.filter(option => option.favourable);
         const regularOptions = options.filter(option => !option.favourable);
 
-        trackEvent('Clicked Resolve Button')
+        trackEvent('Clicked resolve button')
 
         // Check if there are no options available
         if (favourableOptions.length === 0 && regularOptions.length === 0) {
@@ -380,7 +380,7 @@ export default function Home() {
                         </ul>
                     </div>
                     <div className="mt-28 opacity-75 shadow">
-                        <a onClick={() => trackEvent('Opened Public Analytics')}
+                        <a onClick={() => trackEvent('Opened public analytics')}
                            href="https://app.usefathom.com/share/bgrpbyco/resolver">
                             <h3 className="font-semibold">Public Analytics of Resolver</h3>
                         </a>
