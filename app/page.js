@@ -12,20 +12,76 @@ import FathomBanner from "@/app/images/fathom-aff.png"
 export default function Home() {
     const [options, setOptions] = useState([
         {
-            name: 'Pilavcı Fevzi',
+            name: 'Try a New Recipe',
             favourable: true,
         },
         {
-            name: 'Patsocu Nina',
-            favourable: true,
-        },
-        {
-            name: 'Zeytinyağlı Tabakcı Piraye',
-            favourable: true,
-        },
-        {
-            name: 'Börekçi',
+            name: 'Host an Impromptu Dance Party',
             favourable: false,
+        },
+        {
+            name: 'Read a Book for 30 Minutes',
+            favourable: true,
+        },
+        {
+            name: 'Go for a Walk or Hike',
+            favourable: false,
+        },
+        {
+            name: 'Have a Sofa Day in Pajamas',
+            favourable: false,
+        },
+        {
+            name: 'Call a Friend or Family Member',
+            favourable: true,
+        },
+        {
+            name: 'Start a DIY Project',
+            favourable: false,
+        },
+        {
+            name: 'Have a Game Night',
+            favourable: false,
+        },
+        {
+            name: 'Organize a Treasure Hunt at Home',
+            favourable: true,
+        },
+        {
+            name: 'Create a Home Spa Experience',
+            favourable: false,
+        },
+        {
+            name: 'Plan a Themed Movie Marathon',
+            favourable: false,
+        },
+        {
+            name: 'Meditate for 10 Minutes',
+            favourable: true,
+        },
+        {
+            name: 'Learn a Magic Trick',
+            favourable: false,
+        },
+        {
+            name: 'Bake a Surprise Dessert',
+            favourable: false,
+        },
+        {
+            name: 'Compose a Silly Song',
+            favourable: true,
+        },
+        {
+            name: 'Write a Poem or Short Story',
+            favourable: true,
+        },
+        {
+            name: 'Play Dress Up for a Day',
+            favourable: false,
+        },
+        {
+            name: 'Build a Pillow Fort',
+            favourable: true,
         },
     ])
     const [resolveModalOpen, setResolveModalOpen] = useState(false);
@@ -154,7 +210,7 @@ export default function Home() {
     }
 
     return (
-        <div className="max-w-md px-4 mx-auto my-16 md:my-32 sm:max-w-3xl accent-orange-400">
+        <div className="max-w-md px-4 mx-auto my-16 md:mb-32 md:mt-16 sm:max-w-3xl accent-orange-400">
             {cooldownActive ? (
                 <div className="my-auto">
                     <Logo/>
