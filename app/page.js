@@ -6,11 +6,10 @@ import ResolveModal from './components/ResolveModal.jsx'
 import Logo from './components/Logo.jsx'
 import Confetti from 'react-confetti';
 import Image from "next/image";
-import LogoImage from "@/app/images/logo.jpeg";
 import FathomBanner from "@/app/images/fathom-aff.png"
 
 export default function Home() {
-    const [options, setOptions] = useState([
+    const defaultOptions = [
         {
             name: 'Try a New Recipe',
             favourable: true,
@@ -83,7 +82,8 @@ export default function Home() {
             name: 'Build a Pillow Fort',
             favourable: true,
         },
-    ])
+    ];
+    const [options, setOptions] = useState([]);
     const [resolveModalOpen, setResolveModalOpen] = useState(false);
     const [selectedOption, setSelectedOption] = useState(null);
     const [currentTime, setCurrentTime] = useState(new Date());
@@ -141,6 +141,25 @@ export default function Home() {
 
         return `${hours}:${minutes}:${seconds}`;
     };
+
+    useEffect(() => {
+        // Attempt to load options from localStorage on client side
+        if (typeof window !== "undefined") {
+            const savedOptions = localStorage.getItem("userOptions");
+            if (savedOptions) {
+                setOptions(JSON.parse(savedOptions));
+            } else {
+                setOptions(defaultOptions);
+            }
+        }
+    }, []);
+
+    useEffect(() => {
+        // Save options to localStorage whenever they change
+        if (typeof window !== "undefined") {
+            localStorage.setItem("userOptions", JSON.stringify(options));
+        }
+    }, [options]);
 
     const handleSubmit = async (event) => {
         event.preventDefault();
