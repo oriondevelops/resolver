@@ -9,7 +9,7 @@ export default function Logo({className}) {
         <Image
             src={LogoImage}
             className={classes}
-            alt="Resolver"
+            alt="Resolver Logo"
         />
     )
 
