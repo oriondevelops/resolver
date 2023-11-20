@@ -237,7 +237,7 @@ export default function Home() {
                         <small
                             className="text-base animate-ping text-orange-600 font-medium">{formatTime(timeLeft)}</small>
                         <p className="mt-4 italic">Wait you must to consult Resolver</p>
-                        <p className="hidden sm:block bg-gray-50 rounded-xl bg-black">
+                        <p className="hidden sm:block bg-gray-50 rounded-xl">
                             ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣀⣤⣤⠤⠐⠂⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
                             ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⡌⡦⠊⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
                             ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⡀⣼⡊⢀⠔⠀⠀⣄⠤⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣀⣤⣤⣄⣀⠀
@@ -354,7 +354,7 @@ export default function Home() {
                                     className="cursor-pointer group p-2 w-full flex items-center justify-between rounded-full border border-gray-300 shadow-sm space-x-3 text-left hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-orange-400">
                                     <span className="min-w-0 flex-1 flex items-center space-x-3 text-sm">
                                       <span
-                                          className="block flex-shrink-0 ml-1 rounded-full bg-gray-100 py-1 px-2 ml-3">
+                                          className="block flex-shrink-0 ml-3 rounded-full bg-gray-100 group-hover:bg-orange-200 py-1 px-2">
                                         {optionIdx + 1}
                                       </span>
                                       <span className="block min-w-0 flex-1">
