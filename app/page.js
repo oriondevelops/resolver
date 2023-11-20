@@ -7,6 +7,7 @@ import Logo from './components/Logo.jsx'
 import Confetti from 'react-confetti';
 import Image from "next/image";
 import FathomBanner from "@/app/images/fathom-aff.png"
+import { trackEvent } from 'fathom-client';
 
 export default function Home() {
     const defaultOptions = [
@@ -188,6 +189,8 @@ export default function Home() {
     function resolveOptions() {
         const favourableOptions = options.filter(option => option.favourable);
         const regularOptions = options.filter(option => !option.favourable);
+
+        trackEvent('Clicked Resolve Button')
 
         // Check if there are no options available
         if (favourableOptions.length === 0 && regularOptions.length === 0) {
@@ -377,10 +380,12 @@ export default function Home() {
                         </ul>
                     </div>
                     <div className="mt-28 opacity-75 shadow">
-                        <a href="https://app.usefathom.com/share/bgrpbyco/resolver">
+                        <a onClick={() => trackEvent('Opened Public Analytics')}
+                           href="https://app.usefathom.com/share/bgrpbyco/resolver">
                             <h3 className="font-semibold">Public Analytics of Resolver</h3>
                         </a>
-                        <a href="https://usefathom.com/ref/QBCNIT">
+                        <a onClick={() => trackEvent('Clicked Fathom banner')}
+                           href="https://usefathom.com/ref/QBCNIT">
                             <Image
                                 src={FathomBanner}
                                 alt="Fathom Analytics"
